@@ -134,6 +134,29 @@
       font-size:14px;
       font-weight:700;
     }
+    .brand-lockup{
+      display:flex;align-items:center;gap:10px;
+      padding:10px 14px 10px 10px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+    }
+    .brand-lockup:hover{transform:translateY(-2px);border-color:rgba(215,25,32,.18);box-shadow:0 18px 40px rgba(215,25,32,.12)}
+    .brand-lockup-mark{
+      width:42px;height:42px;border-radius:16px;
+      display:grid;place-items:center;
+      background:var(--red-soft);
+      border:1px solid rgba(215,25,32,.16);
+      color:var(--red);
+      font-size:12px;font-weight:800;letter-spacing:.12em;
+      flex:0 0 auto;
+    }
+    .brand-lockup-copy{min-width:0}
+    .brand-lockup-copy .top{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(14,14,17,.45)}
+    .brand-lockup-copy .main{font-size:14px;font-weight:800;line-height:1.1;margin-top:2px}
+    .brand-lockup-copy .sub{font-size:11px;color:rgba(14,14,17,.6);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
     .nav{
       display:none;
@@ -280,6 +303,11 @@
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:12px;
     }
+    .brand-strip{
+      margin-top:14px;
+      display:grid;
+      gap:12px;
+    }
 
     .card{
       background:var(--surface);
@@ -360,6 +388,15 @@
       background:rgba(255,255,255,.1);font-size:10px;font-weight:700;
     }
     .chip.red{background:var(--red);color:#fff}
+    .brand-chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .brand-chip{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:28px;padding:0 12px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.06);
+      color:rgba(255,255,255,.82);
+      font-size:10px;font-weight:800;letter-spacing:.14em;
+    }
     .device-grid{
       display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
     }
@@ -726,16 +763,13 @@
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="#top" aria-label="Inicio">
-        <div class="brand-badge">
-          <svg class="icon stroke" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3l8 4.5-8 4.5L4 7.5 12 3z"></path>
-            <path d="M4 12l8 4.5 8-4.5"></path>
-            <path d="M4 16.5L12 21l8-4.5"></path>
-          </svg>
-        </div>
-        <div>
-          <div class="brand-meta-top">USFQ · COCOA</div>
-          <div class="brand-meta-bottom">Medios Interactivos</div>
+        <div class="brand-lockup">
+          <div class="brand-lockup-mark">DMI</div>
+          <div class="brand-lockup-copy">
+            <div class="top">Carrera</div>
+            <div class="main">Diseño de Medios Interactivos</div>
+            <div class="sub">USFQ · COCOA</div>
+          </div>
         </div>
       </a>
 
@@ -815,6 +849,33 @@
               </div>
             </div>
           </div>
+
+          <div class="brand-strip">
+            <div class="brand-lockup">
+              <div class="brand-lockup-mark">USFQ</div>
+              <div class="brand-lockup-copy">
+                <div class="top">Universidad</div>
+                <div class="main">USFQ</div>
+                <div class="sub">Universidad San Francisco de Quito</div>
+              </div>
+            </div>
+            <div class="brand-lockup">
+              <div class="brand-lockup-mark">COCOA</div>
+              <div class="brand-lockup-copy">
+                <div class="top">Colegio</div>
+                <div class="main">COCOA</div>
+                <div class="sub">Comunicación y Artes Contemporáneas</div>
+              </div>
+            </div>
+            <div class="brand-lockup">
+              <div class="brand-lockup-mark">DMI</div>
+              <div class="brand-lockup-copy">
+                <div class="top">Carrera</div>
+                <div class="main">DMI</div>
+                <div class="sub">Diseño de Medios Interactivos</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="device-wrap reveal">
@@ -831,6 +892,11 @@
                   <span class="dot"></span>
                   <span class="dot red"></span>
                 </div>
+              </div>
+              <div class="brand-chip-row" style="padding:0 16px 0">
+                <span class="brand-chip">USFQ</span>
+                <span class="brand-chip">COCOA</span>
+                <span class="brand-chip">DMI</span>
               </div>
 
               <div class="device-body">
