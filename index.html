@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USFQ · Medios Interactivos</title>
-  <meta name="description" content="Prototipo mobile-first para la carrera de Diseño de Medios Interactivos de la USFQ." />
+  <title>USFQ · Medios Interactivos | La Carrera del Futuro</title>
+  <meta name="description" content="Diseño de Medios Interactivos en la USFQ. Crea videojuegos, VR/AR, desarrollo web y experiencias digitales. Conoce cómo cambiarte de carrera y validar tus materias." />
   <style>
     :root{
       --bg:#ffffff;
@@ -40,16 +40,16 @@
 
     a{text-decoration:none;color:inherit}
     button{font:inherit}
-    img{max-width:100%;display:block}
+    img{max-width:100%;display:block; height:auto;}
 
+    /* Orbes y fondos generales (solo visibles en secciones blancas) */
     .bg-orb{
       position:fixed;
       inset:0;
       pointer-events:none;
       z-index:-2;
       overflow:hidden;
-      background:
-        linear-gradient(180deg,#ffffff 0%, #fff8f8 45%, #ffffff 100%);
+      background: linear-gradient(180deg,#ffffff 0%, #fff8f8 45%, #ffffff 100%);
     }
     .bg-grid{
       position:fixed;
@@ -68,12 +68,8 @@
       filter:blur(56px);
       animation:floatGlow 8s ease-in-out infinite;
     }
-    .orb.red{
-      width:340px;height:340px;right:-120px;top:-96px;background:rgba(215,25,32,.24);
-    }
-    .orb.black{
-      width:280px;height:280px;left:-120px;top:420px;background:rgba(0,0,0,.14);animation-duration:9s;
-    }
+    .orb.red{width:340px;height:340px;right:-120px;top:-96px;background:rgba(215,25,32,.24);}
+    .orb.black{width:280px;height:280px;left:-120px;top:420px;background:rgba(0,0,0,.14);animation-duration:9s;}
     @keyframes floatGlow{
       0%,100%{transform:scale(1);opacity:.12}
       50%{transform:scale(1.08);opacity:.18}
@@ -89,668 +85,213 @@
       transform:translateY(28px);
       transition:opacity .6s ease, transform .6s ease;
     }
-    .reveal.in{
-      opacity:1;
-      transform:translateY(0);
-    }
+    .reveal.in{opacity:1; transform:translateY(0);}
 
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:40;
-      background:rgba(255,255,255,.86);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--line);
-    }
-    .header-row{
-      min-height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      transition:transform .28s ease;
-    }
+    /* Header & Nav Blanca */
+    .site-header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);}
+    .header-row{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .brand{display:flex;align-items:center;gap:12px;transition:transform .28s ease;}
     .brand:hover{transform:translateY(-2px)}
-    .brand-badge{
-      width:40px;height:40px;border-radius:18px;
-      display:grid;place-items:center;
-      background:var(--red-soft);
-      border:1px solid rgba(215,25,32,.16);
-      box-shadow:0 10px 30px rgba(215,25,32,.12);
-    }
-    .brand-meta-top{
-      font-size:11px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:rgba(14,14,17,.45);
-      margin-bottom:2px;
-    }
-    .brand-meta-bottom{
-      font-size:14px;
-      font-weight:700;
-    }
+    
     .brand-lockup{
-      display:flex;align-items:center;gap:10px;
-      padding:10px 14px 10px 10px;
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:#fff;
-      box-shadow:0 10px 30px rgba(0,0,0,.05);
-      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+      display:flex;align-items:center;gap:10px;padding:10px 14px 10px 10px;
+      border:1px solid var(--line);border-radius:22px;background:#fff;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
     }
     .brand-lockup:hover{transform:translateY(-2px);border-color:rgba(215,25,32,.18);box-shadow:0 18px 40px rgba(215,25,32,.12)}
     .brand-lockup-mark{
-      width:42px;height:42px;border-radius:16px;
-      display:grid;place-items:center;
-      background:var(--red-soft);
-      border:1px solid rgba(215,25,32,.16);
-      color:var(--red);
-      font-size:12px;font-weight:800;letter-spacing:.12em;
-      flex:0 0 auto;
+      width:42px;height:42px;border-radius:16px;display:grid;place-items:center;
+      background:var(--red-soft);border:1px solid rgba(215,25,32,.16);
+      color:var(--red);font-size:12px;font-weight:800;letter-spacing:.12em;flex:0 0 auto;
     }
     .brand-lockup-copy{min-width:0}
     .brand-lockup-copy .top{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(14,14,17,.45)}
-    .brand-lockup-copy .main{font-size:14px;font-weight:800;line-height:1.1;margin-top:2px}
+    .brand-lockup-copy .main{font-size:14px;font-weight:800;line-height:1.1;margin-top:2px; color:#0e0e11;}
     .brand-lockup-copy .sub{font-size:11px;color:rgba(14,14,17,.6);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-    .nav{
-      display:none;
-      gap:26px;
-      align-items:center;
-    }
-    .nav-link{
-      font-size:14px;
-      color:rgba(14,14,17,.72);
-      position:relative;
-      transition:color .25s ease;
-    }
+    .nav{display:none;gap:26px;align-items:center;}
+    .nav-link{font-size:14px;color:rgba(14,14,17,.72);position:relative;transition:color .25s ease;}
     .nav-link:hover{color:var(--red)}
-    .nav-link::after{
-      content:"";
-      position:absolute;left:0;bottom:-6px;height:2px;width:0;
-      background:var(--red);
-      transition:width .25s ease;
-    }
+    .nav-link::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--red);transition:width .25s ease;}
     .nav-link:hover::after{width:100%}
 
-    .header-actions{
-      display:flex;align-items:center;gap:10px;
-    }
-
+    .header-actions{display:flex;align-items:center;gap:10px;}
     .btn{
-      border:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:0 20px;
-      min-height:48px;
-      border-radius:999px;
-      cursor:pointer;
-      transition:transform .24s ease, background-color .24s ease, border-color .24s ease, color .24s ease, box-shadow .24s ease;
-      white-space:nowrap;
+      border:none;display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;padding:0 20px;min-height:48px;border-radius:999px;cursor:pointer;
+      transition:all .24s ease;white-space:nowrap;font-weight:600;
     }
     .btn:hover{transform:translateY(-2px) scale(1.02)}
     .btn:active{transform:translateY(0) scale(.985)}
-    .btn-primary{
-      background:var(--red);
-      color:#fff;
-      box-shadow:0 16px 34px rgba(215,25,32,.18);
-    }
-    .btn-primary:hover{background:#101012}
-    .btn-secondary{
-      background:#fff;
-      color:var(--text);
-      border:1px solid rgba(0,0,0,.14);
-    }
-    .btn-secondary:hover{
-      background:var(--red-soft);
-      color:var(--red);
-      border-color:rgba(215,25,32,.22);
-    }
-    .btn-dark{
-      background:#101012;
-      color:#fff;
-    }
+    .btn-primary{background:var(--red);color:#fff;box-shadow:0 16px 34px rgba(215,25,32,.18);}
+    .btn-primary:hover{background:#101012; color:#fff;}
+    .btn-secondary{background:#fff;color:var(--text);border:1px solid rgba(0,0,0,.14);}
+    .btn-secondary:hover{background:var(--red-soft);color:var(--red);border-color:rgba(215,25,32,.22);}
+    .btn-dark{background:#101012;color:#fff;}
     .btn-dark:hover{background:var(--red)}
-    .btn-icon{
-      width:48px;padding:0;border:1px solid var(--line);background:#fff;color:var(--text);
-    }
+    .btn-icon{width:48px;padding:0;border:1px solid var(--line);background:#fff;color:var(--text);}
     .btn-icon:hover{background:var(--red-soft);color:var(--red);border-color:rgba(215,25,32,.18)}
 
-    .mobile-panel{
-      display:none;
-      border-top:1px solid var(--line-soft);
-      padding:0 0 14px;
-    }
+    .mobile-panel{display:none;border-top:1px solid var(--line-soft);padding:0 0 14px;}
     .mobile-panel.open{display:block}
-    .mobile-panel .stack{
-      display:flex;flex-direction:column;gap:8px;
-      padding-top:14px;
-    }
+    .mobile-panel .stack{display:flex;flex-direction:column;gap:8px;padding-top:14px;}
     .mobile-link{
-      padding:14px 16px;
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:#fff;
-      font-size:14px;
-      transition:background-color .24s ease,border-color .24s ease,color .24s ease, transform .24s ease;
+      padding:14px 16px;border:1px solid var(--line);border-radius:20px;background:#fff;
+      font-size:14px;transition:all .24s ease;color:#0e0e11;
     }
-    .mobile-link:hover{
-      transform:translateY(-2px);
-      background:var(--red-soft);
-      color:var(--red);
-      border-color:rgba(215,25,32,.18);
-    }
+    .mobile-link:hover{transform:translateY(-2px);background:var(--red-soft);color:var(--red);border-color:rgba(215,25,32,.18);}
 
+    /* Hero Negro */
     .hero{
-      padding:28px 0 52px;
+      background-color: #050505; /* Fondo negro */
+      color: #ffffff; /* Letras blancas */
+      padding: 56px 0 72px;
+      position: relative;
     }
-    .hero-grid{
-      display:grid;
-      gap:34px;
-      align-items:center;
-    }
+    .hero-grid{display:grid;gap:34px;align-items:center;}
+    
     .eyebrow-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 14px;
-      border-radius:999px;
-      background:var(--red-soft);
-      border:1px solid rgba(215,25,32,.18);
-      color:#b1141a;
-      font-weight:700;
-      font-size:12px;
-      box-shadow:0 10px 30px rgba(215,25,32,.08);
-      transition:transform .24s ease, background-color .24s ease;
+      display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;
+      background:var(--red-soft);border:1px solid rgba(215,25,32,.18);color:#b1141a;
+      font-weight:700;font-size:12px;box-shadow:0 10px 30px rgba(215,25,32,.08);
+      transition:all .24s ease;
     }
     .eyebrow-pill:hover{transform:translateY(-2px) scale(1.03);background:#ffe9ea}
+    
+    /* Variante de Pill para fondos oscuros */
+    .dark-pill {
+      background: rgba(215,25,32,0.15);
+      border-color: rgba(215,25,32,0.3);
+      color: #ffb4b6;
+      box-shadow: none;
+    }
+    .dark-pill:hover { background: rgba(215,25,32,0.25); }
 
-    h1{
-      margin:0;
-      font-size:42px;
-      line-height:1.02;
-      letter-spacing:-.04em;
-      max-width:760px;
+    .hero h1{margin:0;font-size:42px;line-height:1.02;letter-spacing:-.04em;max-width:760px; color: #ffffff;}
+    .hero p.lead{margin:0;max-width:620px;color:rgba(255,255,255,0.7);font-size:17px;line-height:1.7;}
+    .hero-actions{display:flex;flex-direction:column;gap:12px;margin-top:26px;}
+    .hero-actions .arrow{transition:transform .24s ease;}
+    
+    /* Botón secundario modificado para el Hero negro */
+    .hero .btn-secondary {
+      background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.2);
     }
-    .hero p.lead{
-      margin:0;
-      max-width:620px;
-      color:var(--muted);
-      font-size:17px;
-      line-height:1.7;
-    }
-    .hero-actions{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      margin-top:26px;
-    }
-    .hero-actions .arrow{
-      transition:transform .24s ease;
-    }
-    .btn:hover .arrow{transform:translateX(4px)}
-
-    .stats{
-      margin-top:16px;
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px;
-    }
-    .brand-strip{
-      margin-top:14px;
-      display:grid;
-      gap:12px;
+    .hero .btn-secondary:hover {
+      background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4);
     }
 
+    /* Logos (Ahora en fondo negro se verán perfectos) */
+    .logos-wrapper { margin-top: 48px; text-align: center; }
+    .logos-wrapper p { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 16px;}
+    .logos-wrapper img { width: 100%; max-width: 700px; margin: 0 auto; opacity: 0.7; transition: opacity 0.3s;}
+    .logos-wrapper img:hover { opacity: 1; }
+
+    /* Universal Cards & Layouts */
     .card{
-      background:var(--surface);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      border-radius:var(--radius-lg);
-      transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease, background-color .28s ease;
+      background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);
+      border-radius:var(--radius-lg);transition:all .28s ease;
     }
-    .card.hover-rise:hover{
-      transform:translateY(-8px) scale(1.015);
-      border-color:rgba(215,25,32,.18);
-      box-shadow:var(--shadow-strong);
-    }
-    .card-pad{padding:20px}
-    .stat-value{font-size:22px;font-weight:800}
-    .stat-label{margin-top:4px;font-size:12px;line-height:1.55;color:rgba(14,14,17,.60)}
-
-    .device-wrap{
-      position:relative;
-      max-width:420px;
-      width:100%;
-      margin:0 auto;
-      transition:transform .28s ease;
-    }
-    .device-wrap:hover{transform:translateY(-6px)}
-    .device-glow{
-      position:absolute;inset:0;
-      border-radius:36px;
-      background:rgba(215,25,32,.24);
-      filter:blur(48px);
-      animation:devicePulse 6s ease-in-out infinite;
-      transform:scale(.95);
-    }
-    @keyframes devicePulse{
-      0%,100%{opacity:.14;transform:scale(.95)}
-      50%{opacity:.25;transform:scale(1.02)}
-    }
-    .device-shell{
-      position:relative;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:34px;
-      padding:12px;
-      box-shadow:0 30px 90px rgba(0,0,0,.12);
-    }
-    .device-screen{
-      background:#0f0f12;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:28px;
-      overflow:hidden;
-    }
-    .device-top{
-      border-bottom:1px solid rgba(255,255,255,.08);
-      padding:14px 16px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .device-eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45)}
-    .device-title{margin-top:4px;font-size:14px;font-weight:600}
-    .dots{display:flex;gap:6px}
-    .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.2)}
-    .dot.red{background:var(--red-2)}
-    .device-body{padding:16px;display:grid;gap:14px}
-    .device-box{
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      padding:16px;
-      background:linear-gradient(180deg,rgba(215,25,32,.22),rgba(255,255,255,.03));
-      transition:transform .24s ease;
-    }
-    .device-box:hover{transform:scale(1.02)}
-    .chip-row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-    .chip{
-      display:inline-flex;align-items:center;justify-content:center;
-      min-height:26px;padding:0 12px;border-radius:999px;
-      background:rgba(255,255,255,.1);font-size:10px;font-weight:700;
-    }
-    .chip.red{background:var(--red);color:#fff}
-    .brand-chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .brand-chip{
-      display:inline-flex;align-items:center;justify-content:center;
-      min-height:28px;padding:0 12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.1);
-      background:rgba(255,255,255,.06);
-      color:rgba(255,255,255,.82);
-      font-size:10px;font-weight:800;letter-spacing:.14em;
-    }
-    .device-grid{
-      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
-    }
-    .device-mini{
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.05);
-      border-radius:20px;
-      padding:14px;
-      transition:transform .24s ease, background-color .24s ease;
-    }
-    .device-mini:hover{transform:translateY(-4px) scale(1.03);background:rgba(215,25,32,.15)}
-    .device-fit{
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
-      border-radius:20px;
-      padding:16px;
-      transition:transform .24s ease;
-    }
-    .device-fit:hover{transform:scale(1.02)}
-    .device-fit .yes{
-      background:rgba(215,25,32,.22);
-      color:#ffd7d9;
-      font-size:12px;
-      font-weight:700;
-      padding:6px 12px;border-radius:999px;
-    }
-
-    .icon-badge{
-      width:48px;height:48px;border-radius:18px;display:grid;place-items:center;
-      background:var(--red-soft);
-      transition:transform .24s ease, background-color .24s ease;
-      color:var(--red);
-      flex:0 0 auto;
-    }
-    .card:hover .icon-badge{transform:scale(1.1);background:#ffe9ea}
-    .icon-badge.sm{width:44px;height:44px;border-radius:16px}
-    .icon-badge.dark{
-      background:rgba(215,25,32,.15);
-      color:#ff9a9e;
-    }
-
-    .section-title{
-      display:grid;gap:10px;
-      margin-bottom:26px;
-    }
+    .card.hover-rise:hover{transform:translateY(-8px) scale(1.015);border-color:rgba(215,25,32,.18);box-shadow:var(--shadow-strong);}
+    .card-pad{padding:24px}
+    
+    .section-title{display:grid;gap:10px;margin-bottom:32px;}
+    
+    /* Arreglo del Pill gigante */
     .section-title .pill{
       display:inline-flex;
-      width:max-content;
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid rgba(215,25,32,.18);
-      background:var(--red-soft);
-      color:#b1141a;
-      font-size:11px;
-      letter-spacing:.18em;
-      font-weight:700;
-      text-transform:uppercase;
-      transition:transform .24s ease, background-color .24s ease;
+      justify-self: start; /* Esto evita que se estire a lo ancho */
+      align-self: start;   /* Esto evita que se estire a lo alto */
+      width:max-content;padding:8px 14px;border-radius:999px;
+      border:1px solid rgba(215,25,32,.18);background:var(--red-soft);color:#b1141a;
+      font-size:11px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;
     }
-    .section-title .pill:hover{transform:scale(1.03);background:#ffe8e9}
-    .section-title h2{
-      margin:0;
-      font-size:32px;
-      line-height:1.1;
-      max-width:760px;
-      letter-spacing:-.03em;
-    }
-    .section-title p{
-      margin:0;
-      color:var(--muted);
-      max-width:800px;
-      font-size:15px;
-      line-height:1.7;
-    }
+    
+    .section-title h2{margin:0;font-size:32px;line-height:1.1;max-width:760px;letter-spacing:-.03em;}
+    .section-title p{margin:0;color:var(--muted);max-width:800px;font-size:15px;line-height:1.7;}
 
-    .three-col,.four-col,.two-col{
-      display:grid;gap:16px;
-    }
-
-    .feature-title{
-      margin:16px 0 8px;
-      font-size:20px;
-      line-height:1.2;
-    }
-    .feature-text,
-    .muted{
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.7;
-      margin:0;
-    }
-
-    .areas-layout{
-      display:grid;
-      gap:28px;
-    }
-    .areas-nav{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px;
-    }
+    .three-col, .four-col, .two-col{display:grid;gap:16px;}
+    
+    /* Areas & Interactive Panel */
+    .areas-layout{display:grid;gap:28px;}
+    .areas-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
     .area-btn{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:22px;
-      padding:16px;
-      text-align:left;
-      cursor:pointer;
-      transition:transform .24s ease,border-color .24s ease,background-color .24s ease, box-shadow .24s ease,color .24s ease;
-      color:rgba(14,14,17,.78);
+      border:1px solid var(--line);background:#fff;border-radius:22px;padding:16px;
+      text-align:left;cursor:pointer;transition:all .24s ease;color:rgba(14,14,17,.78);
     }
-    .area-btn:hover{
-      transform:translateY(-5px) scale(1.02);
-      border-color:rgba(215,25,32,.18);
-      background:rgba(255,240,241,.72);
-    }
-    .area-btn.active{
-      border-color:rgba(215,25,32,.28);
-      background:var(--red-soft);
-      box-shadow:0 18px 40px rgba(215,25,32,.12);
-      color:#b1141a;
-    }
+    .area-btn:hover{transform:translateY(-5px) scale(1.02);border-color:rgba(215,25,32,.18);background:rgba(255,240,241,.72);}
+    .area-btn.active{border-color:rgba(215,25,32,.28);background:var(--red-soft);box-shadow:0 18px 40px rgba(215,25,32,.12);color:#b1141a;}
     .area-btn .mini-icon{
-      width:44px;height:44px;border-radius:16px;
-      display:grid;place-items:center;
-      margin-bottom:12px;
-      background:rgba(0,0,0,.04);
-      color:rgba(14,14,17,.75);
-      transition:background-color .24s ease,color .24s ease;
+      width:44px;height:44px;border-radius:16px;display:grid;place-items:center;
+      margin-bottom:12px;background:rgba(0,0,0,.04);color:rgba(14,14,17,.75);transition:all .24s ease;
     }
-    .area-btn.active .mini-icon{
-      background:#ffe3e4;
-      color:var(--red);
-    }
+    .area-btn.active .mini-icon{background:#ffe3e4;color:var(--red);}
 
     .area-panel{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:32px;
-      padding:22px;
-      box-shadow:0 18px 70px rgba(0,0,0,.08);
-      transition:transform .24s ease, box-shadow .24s ease;
+      border:1px solid var(--line);background:#fff;border-radius:32px;padding:22px;
+      box-shadow:0 18px 70px rgba(0,0,0,.08);transition:all .24s ease;
     }
-    .area-panel:hover{
-      transform:translateY(-4px);
-      box-shadow:0 26px 70px rgba(215,25,32,.12);
-    }
-    .area-panel-grid{
-      display:grid;
-      gap:24px;
-    }
+    .area-panel:hover{transform:translateY(-4px);box-shadow:0 26px 70px rgba(215,25,32,.12);}
+    .area-panel-grid{display:grid;gap:24px;}
     .area-panel .big-icon{
-      width:56px;height:56px;border-radius:20px;display:grid;place-items:center;background:var(--red-soft);color:var(--red);margin-bottom:16px;
-      transition:transform .24s ease, background-color .24s ease;
+      width:56px;height:56px;border-radius:20px;display:grid;place-items:center;
+      background:var(--red-soft);color:var(--red);margin-bottom:16px;
     }
-    .area-panel .big-icon:hover{transform:scale(1.05);background:#ffe4e5}
-    .area-panel h3{
-      margin:0;
-      font-size:30px;
-      line-height:1.08;
-      letter-spacing:-.03em;
-    }
-    .area-panel p{
-      margin:14px 0 0;
-      color:var(--muted);
-      line-height:1.8;
-      font-size:15px;
-    }
-
-    .dark-box{
-      border:1px solid var(--line);
-      background:#0f0f12;
-      color:#fff;
-      border-radius:24px;
-      padding:18px;
-    }
-    .dark-box .label{
-      font-size:12px;
-      color:rgba(255,255,255,.45);
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      margin-bottom:12px;
-    }
-    .bullet-stack{
-      display:grid;gap:12px;
-    }
+    .area-panel h3{margin:0;font-size:30px;line-height:1.08;letter-spacing:-.03em; color:#0e0e11;}
+    .area-panel p{margin:14px 0 0;color:var(--muted);line-height:1.8;font-size:15px;}
+    .dark-box{border:1px solid var(--line);background:#0f0f12;color:#fff;border-radius:24px;padding:18px;}
     .bullet-chip{
-      border:1px solid rgba(255,255,255,.09);
-      background:rgba(255,255,255,.05);
-      border-radius:18px;
-      padding:14px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      transition:transform .2s ease, background-color .2s ease;
-    }
-    .bullet-chip:hover{transform:translateX(4px);background:rgba(255,255,255,.08)}
-    .bullet-chip span{
-      font-size:14px;
-      color:rgba(255,255,255,.86);
+      border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.05);
+      border-radius:18px;padding:14px;display:flex;gap:12px;align-items:center;
     }
 
-    .info-card h3{
-      margin:14px 0 8px;
-      font-size:20px;
+    /* Galería & Hackathon */
+    .project-card { display: flex; flex-direction: column; height: 100%; }
+    .project-img-ph { height: 180px; background: linear-gradient(135deg, #fce4e4, #fff0f1); border-radius: 16px 16px 0 0; display: flex; align-items: center; justify-content: center; color: var(--red); font-weight: bold; font-size: 14px; border-bottom: 1px solid var(--line-soft);}
+    .hackathon-banner {
+      background: linear-gradient(135deg, #101012, #2a0809); color: white; border-radius: var(--radius-xl); padding: 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; position: relative; overflow: hidden;
     }
+    .hackathon-banner::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background: radial-gradient(circle, rgba(215,25,32,0.15) 0%, transparent 60%); z-index: 0; pointer-events: none;}
+    .hackathon-banner > * { z-index: 1; }
 
-    .ecosystem-list{
-      display:grid;
-      gap:12px;
-    }
-    .ecosystem-item{
-      display:flex;gap:12px;align-items:flex-start;
-      padding:16px;
-      border-radius:22px;border:1px solid var(--line);
-      background:#fff;
-      box-shadow:0 10px 24px rgba(0,0,0,.04);
-      transition:transform .24s ease,border-color .24s ease,background-color .24s ease;
-    }
-    .ecosystem-item:hover{
-      transform:translateY(-4px);
-      border-color:rgba(215,25,32,.18);
-      background:rgba(255,240,241,.55);
-    }
-    .ecosystem-item p{
-      margin:0;
-      font-size:14px;
-      line-height:1.7;
-      color:rgba(14,14,17,.76);
-    }
+    /* Testimonios */
+    .testimonial-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow); position: relative; }
+    .testimonial-quote { font-size: 16px; font-style: italic; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--red-soft); display: grid; place-items: center; color: var(--red); font-weight: 700; }
+    
+    /* FAQ */
+    .faq-item { border: 1px solid var(--line); border-radius: 16px; background: #fff; margin-bottom: 12px; overflow: hidden; transition: all 0.3s ease; }
+    .faq-question { width: 100%; text-align: left; padding: 18px 20px; font-size: 16px; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text); }
+    .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; color: var(--muted); font-size: 15px; line-height: 1.6; }
+    .faq-item.active .faq-answer { padding: 0 20px 20px; max-height: 200px; }
+    .faq-item.active { border-color: rgba(215,25,32,.28); background: var(--red-soft); }
+    .faq-icon { transition: transform 0.3s ease; }
+    .faq-item.active .faq-icon { transform: rotate(180deg); color: var(--red); }
 
-    .profile-card{
-      background:#0f0f12;
-      color:#fff;
-      border-radius:32px;
-      border:1px solid var(--line);
-      box-shadow:0 24px 80px rgba(0,0,0,.14);
-      transition:transform .24s ease;
-    }
-    .profile-card:hover{transform:translateY(-6px)}
-    .profile-card .head{
-      display:flex;justify-content:space-between;gap:16px;align-items:flex-start;
-      margin-bottom:18px;
-    }
-    .profile-card .eyebrow{
-      font-size:12px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.40);
-      margin-bottom:10px;
-    }
-    .profile-card h3{
-      margin:0;
-      font-size:30px;
-      line-height:1.08;
-      letter-spacing:-.03em;
-    }
-    .profile-points{
-      display:grid;gap:12px;
-    }
-    .profile-point{
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.05);
-      border-radius:22px;
-      padding:16px;
-      transition:transform .22s ease, background-color .22s ease, border-color .22s ease;
-    }
-    .profile-point:hover{
-      transform:translateX(4px) scale(1.01);
-      background:rgba(255,255,255,.08);
-      border-color:rgba(215,25,32,.28);
-    }
-    .profile-point h4{margin:0 0 6px;font-size:15px}
-    .profile-point p{margin:0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.68)}
-
-    .careers-card{
-      border:1px solid rgba(215,25,32,.16);
-      background:linear-gradient(135deg,#fef2f2,#ffffff);
-      border-radius:36px;
-      box-shadow:0 18px 80px rgba(215,25,32,.10);
-      transition:transform .24s ease;
-    }
-    .careers-card:hover{transform:translateY(-4px)}
-    .careers-grid{display:grid;gap:16px}
-    .career-tag{
-      display:flex;justify-content:space-between;align-items:center;gap:14px;
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:22px;
-      padding:16px;
-      box-shadow:0 10px 24px rgba(0,0,0,.04);
-      transition:transform .24s ease,border-color .24s ease,background-color .24s ease,color .24s ease;
-    }
-    .career-tag:hover{
-      transform:translateY(-4px) scale(1.02);
-      border-color:rgba(215,25,32,.18);
-      background:var(--red-soft);
-      color:var(--red);
-    }
-    .career-tag span{font-weight:600;font-size:14px}
-
-    .bottom-bar{
-      position:fixed;
-      left:0;right:0;bottom:0;
-      z-index:40;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(18px);
-      border-top:1px solid var(--line);
-      padding:12px 16px;
-    }
-    .bottom-actions{
-      width:min(calc(100% - 0px),440px);
-      margin:0 auto;
-      display:flex;gap:12px;
-    }
-    .bottom-actions .btn{flex:1}
-
-    .desktop-only{display:none}
-    .mobile-only{display:inline-flex}
-
-    .icon{width:20px;height:20px;display:inline-block;vertical-align:middle}
-    .icon.sm{width:16px;height:16px}
-    .icon.lg{width:22px;height:22px}
-    .icon.stroke{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-    .icon.fill{fill:currentColor}
-
+    /* Responsive */
     @media (min-width: 640px){
-      .hero{padding:38px 0 72px}
+      .hero{padding:72px 0 96px}
       h1{font-size:56px}
-      .section{padding:64px 0}
-      .section-lg{padding:84px 0}
       .hero-actions{flex-direction:row;align-items:center}
-      .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
       .section-title h2{font-size:38px}
-      .careers-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
-
     @media (min-width: 860px){
       .nav{display:flex}
       .desktop-only{display:inline-flex}
       .mobile-only{display:none}
-      .hero-grid{grid-template-columns:1.05fr .95fr;gap:48px}
+      .hero-grid{grid-template-columns:1.1fr 0.9fr;gap:48px}
       .three-col{grid-template-columns:repeat(3,minmax(0,1fr))}
-      .four-col{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .two-col{grid-template-columns:.95fr 1.05fr}
+      .two-col{grid-template-columns:1fr 1fr}
       .areas-layout{grid-template-columns:.70fr 1.30fr}
       .area-panel-grid{grid-template-columns:1fr .8fr}
-      .section-bottom-pad{padding-bottom:96px}
       .bottom-bar{display:none}
     }
 
-    @media (min-width: 1120px){
-      .four-col{grid-template-columns:repeat(4,minmax(0,1fr))}
-    }
+    .icon{width:20px;height:20px;display:inline-block;vertical-align:middle}
+    .icon.sm{width:16px;height:16px}
+    .icon.lg{width:24px;height:24px}
+    .icon.stroke{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .icon.fill{fill:currentColor}
   </style>
 </head>
 <body>
@@ -774,19 +315,17 @@
       </a>
 
       <nav class="nav" aria-label="Principal">
-        <a class="nav-link" href="#propuesta">Propuesta</a>
         <a class="nav-link" href="#areas">Áreas</a>
-        <a class="nav-link" href="#ruta">Ruta</a>
-        <a class="nav-link" href="#salida">Salida profesional</a>
+        <a class="nav-link" href="#proyectos">Proyectos y Eventos</a>
+        <a class="nav-link" href="#testimonios">Testimonios</a>
+        <a class="nav-link" href="#faq">FAQ Transición</a>
       </nav>
 
       <div class="header-actions">
         <a class="btn btn-dark desktop-only" href="https://admision.usfq.edu.ec" target="_blank" rel="noreferrer">Postula</a>
         <button class="btn btn-icon mobile-only" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobilePanel">
           <svg class="icon stroke" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 7h16"></path>
-            <path d="M4 12h16"></path>
-            <path d="M4 17h16"></path>
+            <path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path>
           </svg>
         </button>
       </div>
@@ -794,10 +333,10 @@
 
     <div class="mobile-panel" id="mobilePanel">
       <div class="container stack">
-        <a class="mobile-link" href="#propuesta">Propuesta</a>
         <a class="mobile-link" href="#areas">Áreas</a>
-        <a class="mobile-link" href="#ruta">Ruta</a>
-        <a class="mobile-link" href="#salida">Salida profesional</a>
+        <a class="mobile-link" href="#proyectos">Proyectos y Eventos</a>
+        <a class="mobile-link" href="#testimonios">Testimonios</a>
+        <a class="mobile-link" href="#faq">FAQ Transición</a>
       </div>
     </div>
   </header>
@@ -806,219 +345,73 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="reveal">
-          <div class="eyebrow-pill">
-            <svg class="icon sm fill" viewBox="0 0 24 24" aria-hidden="true">
+          <div class="eyebrow-pill dark-pill">
+            <svg class="icon sm fill" viewBox="0 0 24 24" aria-hidden="true" style="color:#ffb4b6;">
               <path d="M12 2l1.8 5.3L19 9.1l-4.2 3.1L16.4 18 12 14.9 7.6 18l1.6-5.8L5 9.1l5.2-1.8L12 2z"></path>
             </svg>
-            Prototipo mobile first de alta conversión
+            La carrera del futuro
           </div>
 
           <div style="display:grid;gap:16px;margin-top:18px">
-            <h1>Diseña el futuro de lo digital con una carrera hecha para crear, experimentar y construir.</h1>
-            <p class="lead">Un prototipo conceptual para la carrera de Diseño de Medios Interactivos de la USFQ. La interfaz prioriza claridad, exploración y deseo de postulación desde la experiencia móvil.</p>
+            <h1>Diseña el futuro. Crea videojuegos, VR/AR y desarrollo web.</h1>
+            <p class="lead">¿Estás en otra carrera y sientes que lo tuyo es crear? Únete a Diseño de Medios Interactivos en la USFQ. Aprende Unity, UX/UI, 3D y construye tecnología que se siente viva.</p>
           </div>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://admision.usfq.edu.ec" target="_blank" rel="noreferrer">
-              Quiero estudiar esto
+              Iniciar mi postulación / cambio
               <svg class="icon sm stroke arrow" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 12h14"></path>
-                <path d="M13 5l7 7-7 7"></path>
+                <path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path>
               </svg>
             </a>
-            <a class="btn btn-secondary" href="#areas">Explorar áreas</a>
+            <a class="btn btn-secondary" href="#faq">Ver validación de materias</a>
           </div>
 
-          <div class="stats">
-            <div class="card hover-rise">
-              <div class="card-pad">
-                <div class="stat-value">8</div>
-                <div class="stat-label">semestres</div>
-              </div>
-            </div>
-            <div class="card hover-rise">
-              <div class="card-pad">
-                <div class="stat-value">COCOA</div>
-                <div class="stat-label">ecosistema creativo</div>
-              </div>
-            </div>
-            <div class="card hover-rise">
-              <div class="card-pad">
-                <div class="stat-value">UX/UI</div>
-                <div class="stat-label">web, apps y juegos</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="brand-strip">
-            <div class="brand-lockup">
-              <div class="brand-lockup-mark">USFQ</div>
-              <div class="brand-lockup-copy">
-                <div class="top">Universidad</div>
-                <div class="main">USFQ</div>
-                <div class="sub">Universidad San Francisco de Quito</div>
-              </div>
-            </div>
-            <div class="brand-lockup">
-              <div class="brand-lockup-mark">COCOA</div>
-              <div class="brand-lockup-copy">
-                <div class="top">Colegio</div>
-                <div class="main">COCOA</div>
-                <div class="sub">Comunicación y Artes Contemporáneas</div>
-              </div>
-            </div>
-            <div class="brand-lockup">
-              <div class="brand-lockup-mark">DMI</div>
-              <div class="brand-lockup-copy">
-                <div class="top">Carrera</div>
-                <div class="main">DMI</div>
-                <div class="sub">Diseño de Medios Interactivos</div>
-              </div>
-            </div>
+          <div class="logos-wrapper">
+            <p>Aprende a usar las herramientas de la industria</p>
+            <img src="https://framerusercontent.com/images/FVhPzqDNxTIuiAITOmXoVY0pw.png?width=1080&height=436" alt="Logos de tecnologías y herramientas de desarrollo" loading="lazy">
           </div>
         </div>
 
-        <div class="device-wrap reveal">
-          <div class="device-glow"></div>
-          <div class="device-shell">
-            <div class="device-screen">
-              <div class="device-top">
-                <div>
-                  <div class="device-eyebrow">Landing concept</div>
-                  <div class="device-title">Mobile experience</div>
-                </div>
-                <div class="dots">
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot red"></span>
-                </div>
-              </div>
-              <div class="brand-chip-row" style="padding:0 16px 0">
-                <span class="brand-chip">USFQ</span>
-                <span class="brand-chip">COCOA</span>
-                <span class="brand-chip">DMI</span>
-              </div>
-
-              <div class="device-body">
-                <div class="device-box">
-                  <div class="chip-row">
-                    <span class="chip">Explora tu perfil</span>
-                    <span class="chip red">Top choice</span>
-                  </div>
-                  <h3 style="margin:14px 0 8px;font-size:20px;line-height:1.2">Una carrera para creadores digitales</h3>
-                  <p style="margin:0;color:rgba(255,255,255,.66);line-height:1.7;font-size:14px">Diseño visual, interacción, código y proyectos aplicados en una sola experiencia.</p>
-                </div>
-
-                <div class="device-grid">
-                  <div class="device-mini">
-                    <div class="icon-badge sm dark">
-                      <svg class="icon stroke" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"></rect><path d="M7 17l-1 4"></path><path d="M17 17l1 4"></path></svg>
-                    </div>
-                    <div style="font-size:14px;font-weight:600">Videojuegos</div>
-                  </div>
-                  <div class="device-mini">
-                    <div class="icon-badge sm dark">
-                      <svg class="icon stroke" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"></rect><path d="M9 7h6"></path><path d="M8 12h8"></path></svg>
-                    </div>
-                    <div style="font-size:14px;font-weight:600">UX/UI</div>
-                  </div>
-                  <div class="device-mini">
-                    <div class="icon-badge sm dark">
-                      <svg class="icon stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.3 3 14.7 0 18"></path><path d="M12 3c-3 3.3-3 14.7 0 18"></path></svg>
-                    </div>
-                    <div style="font-size:14px;font-weight:600">Apps</div>
-                  </div>
-                  <div class="device-mini">
-                    <div class="icon-badge sm dark">
-                      <svg class="icon stroke" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M4 10h3"></path><path d="M17 10h3"></path><path d="M4 14h3"></path><path d="M17 14h3"></path><path d="M10 4v3"></path><path d="M14 4v3"></path><path d="M10 17v3"></path><path d="M14 17v3"></path></svg>
-                    </div>
-                    <div style="font-size:14px;font-weight:600">Interactividad</div>
-                  </div>
-                </div>
-
-                <div class="device-fit">
-                  <div style="display:flex;justify-content:space-between;gap:16px;align-items:center">
-                    <div>
-                      <div style="font-size:14px;font-weight:600">¿Tu perfil encaja aquí?</div>
-                      <div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:4px">Creatividad, curiosidad y deseo de construir</div>
-                    </div>
-                    <span class="yes">Sí</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="device-wrap reveal desktop-only">
+          <div class="card hover-rise" style="background: #111113; color: white; padding: 40px 32px; border-radius: 32px; border: 1px solid rgba(255,255,255,0.1);">
+            <div class="eyebrow-pill dark-pill" style="border:none;">Perfil del Estudiante DMI</div>
+            <h3 style="margin: 24px 0 16px; font-size: 26px;">¿Tu perfil encaja aquí?</h3>
+            <ul style="list-style:none; padding:0; margin:0; display:grid; gap: 16px; color: rgba(255,255,255,0.7); font-size: 15px;">
+              <li style="display:flex; gap:12px; align-items:flex-start;"><svg class="icon stroke" style="color:var(--red-2); flex-shrink:0" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg> <span>Quieres crear juegos y experiencias, no solo consumirlos.</span></li>
+              <li style="display:flex; gap:12px; align-items:flex-start;"><svg class="icon stroke" style="color:var(--red-2); flex-shrink:0" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg> <span>Sientes curiosidad por cruzar el código con el arte y el diseño.</span></li>
+              <li style="display:flex; gap:12px; align-items:flex-start;"><svg class="icon stroke" style="color:var(--red-2); flex-shrink:0" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg> <span>Buscas una carrera práctica que valide tu creatividad digital.</span></li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="propuesta">
-      <div class="container three-col">
-        <article class="card hover-rise reveal">
-          <div class="card-pad">
-            <div class="icon-badge">
-              <svg class="icon stroke" viewBox="0 0 24 24"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"></path><path d="M7 9l5 3 5-3"></path><path d="M12 12v9"></path></svg>
-            </div>
-            <h3 class="feature-title">Diseño + arte + programación</h3>
-            <p class="feature-text">Una formación híbrida pensada para perfiles creativos que también quieren construir y prototipar.</p>
-          </div>
-        </article>
-
-        <article class="card hover-rise reveal">
-          <div class="card-pad">
-            <div class="icon-badge">
-              <svg class="icon fill" viewBox="0 0 24 24"><path d="M12 2l1.8 5.3L19 9.1l-4.2 3.1L16.4 18 12 14.9 7.6 18l1.6-5.8L5 9.1l5.2-1.8L12 2z"></path></svg>
-            </div>
-            <h3 class="feature-title">Aprendizaje basado en proyectos</h3>
-            <p class="feature-text">La experiencia se presenta como una ruta práctica donde cada semestre se convierte en un portafolio vivo.</p>
-          </div>
-        </article>
-
-        <article class="card hover-rise reveal">
-          <div class="card-pad">
-            <div class="icon-badge">
-              <svg class="icon stroke" viewBox="0 0 24 24"><path d="M3 8h18"></path><path d="M7 8V6a5 5 0 0 1 10 0v2"></path><rect x="5" y="8" width="14" height="11" rx="2"></rect></svg>
-            </div>
-            <h3 class="feature-title">Perfil profesional versátil</h3>
-            <p class="feature-text">La interfaz del sitio comunica empleabilidad, adaptabilidad y preparación para industrias creativas y tecnológicas.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-lg" id="areas">
+    <section class="section-lg" id="areas" style="background: var(--bg-soft);">
       <div class="container areas-layout">
         <div class="section-title reveal">
-          <span class="pill">Áreas clave</span>
-          <h2>Una experiencia que te deja descubrir qué tipo de creador digital quieres ser</h2>
-          <p>La navegación de esta sección fue pensada como un selector simple en móvil y como un panel exploratorio en escritorio. Reduce fricción, mejora lectura y deja que el contenido respire.</p>
+          <span class="pill">Especializaciones</span>
+          <h2>Aprende creando desde el primer semestre</h2>
+          <p>No somos una carrera teórica. Aquí compilas juegos, diseñas interfaces web de alto impacto y llevas la realidad virtual a la práctica.</p>
         </div>
 
         <div class="reveal">
           <div class="areas-nav" id="areaButtons">
-            <button class="area-btn active" data-area="ux">
-              <div class="mini-icon">
-                <svg class="icon stroke" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"></rect><path d="M9 7h6"></path><path d="M8 12h8"></path></svg>
-              </div>
-              <div style="font-size:14px;font-weight:700">UX/UI</div>
+            <button class="area-btn active" data-area="games">
+              <div class="mini-icon"><svg class="icon stroke" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"></rect><path d="M7 17l-1 4"></path><path d="M17 17l1 4"></path></svg></div>
+              <div style="font-size:14px;font-weight:700">Videojuegos y VR</div>
             </button>
-            <button class="area-btn" data-area="games">
-              <div class="mini-icon">
-                <svg class="icon stroke" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"></rect><path d="M7 17l-1 4"></path><path d="M17 17l1 4"></path></svg>
-              </div>
-              <div style="font-size:14px;font-weight:700">Videojuegos</div>
+            <button class="area-btn" data-area="ux">
+              <div class="mini-icon"><svg class="icon stroke" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"></rect><path d="M9 7h6"></path><path d="M8 12h8"></path></svg></div>
+              <div style="font-size:14px;font-weight:700">UX/UI Design</div>
             </button>
             <button class="area-btn" data-area="webapps">
-              <div class="mini-icon">
-                <svg class="icon stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.3 3 14.7 0 18"></path><path d="M12 3c-3 3.3-3 14.7 0 18"></path></svg>
-              </div>
-              <div style="font-size:14px;font-weight:700">Web y apps</div>
+              <div class="mini-icon"><svg class="icon stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.3 3 14.7 0 18"></path><path d="M12 3c-3 3.3-3 14.7 0 18"></path></svg></div>
+              <div style="font-size:14px;font-weight:700">Desarrollo Web</div>
             </button>
             <button class="area-btn" data-area="physical">
-              <div class="mini-icon">
-                <svg class="icon stroke" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M4 10h3"></path><path d="M17 10h3"></path><path d="M4 14h3"></path><path d="M17 14h3"></path><path d="M10 4v3"></path><path d="M14 4v3"></path><path d="M10 17v3"></path><path d="M14 17v3"></path></svg>
-              </div>
-              <div style="font-size:14px;font-weight:700">Interactividad física</div>
+              <div class="mini-icon"><svg class="icon stroke" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M4 10h3"></path><path d="M17 10h3"></path><path d="M4 14h3"></path><path d="M17 14h3"></path><path d="M10 4v3"></path><path d="M14 4v3"></path><path d="M10 17v3"></path><path d="M14 17v3"></path></svg></div>
+              <div style="font-size:14px;font-weight:700">Interactividad</div>
             </button>
           </div>
 
@@ -1026,11 +419,11 @@
             <div class="area-panel-grid">
               <div>
                 <div class="big-icon" id="areaIcon"></div>
-                <h3 id="areaTitle">Diseña experiencias claras, humanas y memorables</h3>
-                <p id="areaText">Aprende a investigar, prototipar y construir interfaces que realmente respondan a las personas. La propuesta visual combina usabilidad, dirección de arte y pensamiento estratégico.</p>
+                <h3 id="areaTitle">Desarrolla en Unity y Unreal</h3>
+                <p id="areaText">Construye mundos multijugador, diseña mecánicas, aplica modelado 3D y rigging. Prepárate para la industria del gaming internacional.</p>
               </div>
               <div class="dark-box">
-                <div class="label">Lo que transmite esta sección</div>
+                <div class="label">Habilidades adquiridas</div>
                 <div class="bullet-stack" id="areaBullets"></div>
               </div>
             </div>
@@ -1039,182 +432,123 @@
       </div>
     </section>
 
-    <section class="section-lg" id="ruta">
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section-title reveal text-center" style="display:flex; flex-direction:column; align-items:center;">
+          <span class="pill" style="align-self:center;">Galería DMI</span>
+          <h2 style="text-align:center;">Proyectos reales de estudiantes reales</h2>
+          <p style="text-align:center;">Tu portafolio se construye mientras estudias. Estos son proyectos nacidos en nuestras aulas y eventos.</p>
+        </div>
+
+        <div class="three-col reveal">
+          <article class="card project-card hover-rise">
+            <div class="project-img-ph">Proyecto en Unity 6</div>
+            <div class="card-pad">
+              <h3 style="margin: 0 0 8px; font-size: 18px; color:#0e0e11;">Partial Truth</h3>
+              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Juego cooperativo 3D multijugador desarrollado con Unity 6 y Photon Fusion 2. Un proyecto nacido directamente del esfuerzo de nuestros alumnos en hackathons.</p>
+              <span class="eyebrow-pill" style="font-size: 10px; padding: 4px 8px;">Game Dev</span>
+            </div>
+          </article>
+          
+          <article class="card project-card hover-rise">
+            <div class="project-img-ph">Entorno Inmersivo</div>
+            <div class="card-pad">
+              <h3 style="margin: 0 0 8px; font-size: 18px; color:#0e0e11;">Experiencia VR Cultural</h3>
+              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Aplicación de realidad virtual que explora mitologías indígenas mediante narrativa interactiva y diseño 3D avanzado.</p>
+              <span class="eyebrow-pill" style="font-size: 10px; padding: 4px 8px;">VR / AR</span>
+            </div>
+          </article>
+
+          <article class="card project-card hover-rise">
+            <div class="project-img-ph">Web & App</div>
+            <div class="card-pad">
+              <h3 style="margin: 0 0 8px; font-size: 18px; color:#0e0e11;">Rediseño E-commerce</h3>
+              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Optimización UX/UI y desarrollo front-end de un e-commerce real implementando mejores prácticas de conversión y usabilidad.</p>
+              <span class="eyebrow-pill" style="font-size: 10px; padding: 4px 8px;">UX / UI</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="hackathon-banner reveal" style="margin-top: 48px;">
+          <h2 style="margin: 0; font-size: 32px;">Nacimos para hackear la realidad</h2>
+          <p style="margin: 0; font-size: 16px; max-width: 600px; color: rgba(255,255,255,0.8);">La DMI es la sede principal del <strong>interact2hack</strong>, la maratón de desarrollo donde creas juegos, apps y experiencias en tiempo récord. El lugar donde tu creatividad encuentra código.</p>
+          <a class="btn btn-primary" href="https://interact2hack.com/" target="_blank" rel="noreferrer" style="margin-top: 16px;">
+            Conoce el evento interact2hack
+            <svg class="icon sm stroke arrow" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonios" style="background: var(--bg-soft);">
       <div class="container">
         <div class="section-title reveal">
-          <span class="pill">Ruta académica</span>
-          <h2>Una estructura pensada para crecer por etapas</h2>
-          <p>En lugar de saturar con una malla completa, el prototipo resume la experiencia por años para que la comprensión sea rápida en móvil y el recorrido se sienta alcanzable.</p>
+          <span class="pill">Nuestra Comunidad</span>
+          <h2>Lo que dicen los que ya dieron el salto</h2>
         </div>
-
-        <div class="four-col">
-          <article class="card hover-rise reveal info-card">
-            <div class="card-pad">
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-                <span class="eyebrow-pill" style="padding:7px 12px;box-shadow:none">Año 1</span>
-                <svg class="icon stroke" style="color:var(--red)" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v15H6.5A2.5 2.5 0 0 0 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        
+        <div class="two-col reveal">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"Empecé en otra carrera porque no sabía que existía algo donde pudiera juntar mi amor por el arte 3D y la programación. Validaron mis materias de tronco común, me cambié, y ahora desarrollo juegos en Unity."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">S</div>
+              <div>
+                <strong style="display:block; font-size: 14px;">Sebastián P.</strong>
+                <span style="font-size: 12px; color: var(--muted);">Estudiante, Cambio de Carrera</span>
               </div>
-              <h3>Fundamentos</h3>
-              <p class="muted">Bases de diseño, creatividad, visualidad, pensamiento crítico y primeras aproximaciones a medios digitales.</p>
             </div>
-          </article>
-
-          <article class="card hover-rise reveal info-card">
-            <div class="card-pad">
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-                <span class="eyebrow-pill" style="padding:7px 12px;box-shadow:none">Año 2</span>
-                <svg class="icon stroke" style="color:var(--red)" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v15H6.5A2.5 2.5 0 0 0 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </div>
+          
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"La carrera te prepara para lo que la industria realmente pide. Entré queriendo hacer páginas web, terminé siendo un fanático de After Effects y el diseño de experiencias interactivas físicas."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">M</div>
+              <div>
+                <strong style="display:block; font-size: 14px;">Martina C.</strong>
+                <span style="font-size: 12px; color: var(--muted);">Alumna de 6to Semestre</span>
               </div>
-              <h3>Herramientas y exploración</h3>
-              <p class="muted">Web, interfaces, narrativa, prototipos y una visión más clara de tus intereses como creador digital.</p>
             </div>
-          </article>
-
-          <article class="card hover-rise reveal info-card">
-            <div class="card-pad">
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-                <span class="eyebrow-pill" style="padding:7px 12px;box-shadow:none">Año 3</span>
-                <svg class="icon stroke" style="color:var(--red)" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v15H6.5A2.5 2.5 0 0 0 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-              </div>
-              <h3>Especialización</h3>
-              <p class="muted">Proyectos más complejos en UX/UI, videojuegos, apps, interactividad física y experiencias inmersivas.</p>
-            </div>
-          </article>
-
-          <article class="card hover-rise reveal info-card">
-            <div class="card-pad">
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-                <span class="eyebrow-pill" style="padding:7px 12px;box-shadow:none">Año 4</span>
-                <svg class="icon stroke" style="color:var(--red)" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v15H6.5A2.5 2.5 0 0 0 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-              </div>
-              <h3>Portafolio y proyección</h3>
-              <p class="muted">Desarrollo de proyectos de alto nivel, identidad profesional y preparación para industria o emprendimiento.</p>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-lg">
-      <div class="container two-col">
+    <section class="section" id="faq">
+      <div class="container" style="max-width: 800px;">
+        <div class="section-title reveal text-center" style="display:flex; flex-direction:column; align-items:center;">
+          <span class="pill" style="align-self:center;">Dudas Frecuentes</span>
+          <h2 style="text-align:center;">Todo listo para que des el paso</h2>
+          <p style="text-align:center;">Tanto si vienes del colegio como si quieres trasladarte desde otra carrera, aquí resolvemos tus dudas.</p>
+        </div>
+
         <div class="reveal">
-          <div class="section-title">
-            <span class="pill">Experiencia</span>
-            <h2>La página propone una carrera viva, no una lista fría de materias</h2>
-            <p>El contenido se organiza para que la decisión de estudiar se sienta emocional y racional a la vez. Primero inspira. Luego explica. Finalmente invita a actuar.</p>
-          </div>
-
-          <div class="ecosystem-list">
-            <div class="ecosystem-item">
-              <div class="icon-badge sm">
-                <svg class="icon stroke" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <p>COCOA como entorno interdisciplinario</p>
-            </div>
-            <div class="ecosystem-item">
-              <div class="icon-badge sm">
-                <svg class="icon stroke" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <p>8 semestres en modalidad presencial</p>
-            </div>
-            <div class="ecosystem-item">
-              <div class="icon-badge sm">
-                <svg class="icon stroke" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <p>Acceso a tecnología, laboratorios y herramientas contemporáneas</p>
-            </div>
-            <div class="ecosystem-item">
-              <div class="icon-badge sm">
-                <svg class="icon stroke" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <p>Énfasis en creatividad, pensamiento crítico y diseño centrado en personas</p>
-            </div>
-            <div class="ecosystem-item">
-              <div class="icon-badge sm">
-                <svg class="icon stroke" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <p>Conexión con networking, intercambio y cultura de proyectos</p>
-            </div>
-            <div class="ecosystem-item">
-              <div class="icon-badge sm">
-                <svg class="icon stroke" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <p>Preparación para web, apps, videojuegos y experiencias interactivas</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Me puedo cambiar a DMI desde otra carrera en la USFQ u otra U?
+              <svg class="icon stroke faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <div class="faq-answer">
+              <p>¡Totalmente! Es un proceso súper común. Tus materias del Colegio General (Artes Liberales) y otras compatibles se validan directamente para que no pierdas el progreso que ya lograste. Nuestro equipo te guía paso a paso en el proceso de homologación.</p>
             </div>
           </div>
-        </div>
-
-        <div class="profile-card reveal">
-          <div class="card-pad" style="padding:22px 22px 24px">
-            <div class="head">
-              <div>
-                <div class="eyebrow">Perfil de egreso</div>
-                <h3>Versátil, creativo y listo para industria</h3>
-              </div>
-              <div class="icon-badge dark">
-                <svg class="icon stroke" viewBox="0 0 24 24"><path d="M4 20h16"></path><path d="M7 20V10l5-5 5 5v10"></path><path d="M12 5V3"></path></svg>
-              </div>
-            </div>
-
-            <div class="profile-points">
-              <div class="profile-point">
-                <div style="display:flex;gap:14px">
-                  <div class="icon-badge dark sm">
-                    <svg class="icon stroke" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg>
-                  </div>
-                  <div>
-                    <h4>Piensa y ejecuta</h4>
-                    <p>No solo propone ideas. También las convierte en experiencias funcionales.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-point">
-                <div style="display:flex;gap:14px">
-                  <div class="icon-badge dark sm">
-                    <svg class="icon stroke" viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.8 3-4s-1.3-4-3-4-3 1.8-3 4 1.3 4 3 4z"></path><path d="M8 13c2.2 0 4-2.2 4-5S10.2 3 8 3 4 5.2 4 8s1.8 5 4 5z"></path><path d="M2 21v-1c0-2.8 2.2-5 5-5h2"></path><path d="M13 21v-1c0-2.2 1.8-4 4-4h1c2.2 0 4 1.8 4 4v1"></path></svg>
-                  </div>
-                  <div>
-                    <h4>Trabaja de forma interdisciplinaria</h4>
-                    <p>El diseño se presenta como colaboración entre creatividad, tecnología y estrategia.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-point">
-                <div style="display:flex;gap:14px">
-                  <div class="icon-badge dark sm">
-                    <svg class="icon stroke" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="12" rx="2"></rect><path d="M8 20h8"></path><path d="M12 16v4"></path></svg>
-                  </div>
-                  <div>
-                    <h4>Construye portafolio desde la carrera</h4>
-                    <p>La estructura del sitio refuerza una narrativa de proyectos y salida profesional.</p>
-                  </div>
-                </div>
-              </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Necesito saber programar o diseñar en 3D antes de entrar?
+              <svg class="icon stroke faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. La carrera está diseñada para enseñarte desde los fundamentos lógicos y de diseño visual hasta programación avanzada (C#, web, etc.) y modelado complejo. Solo necesitas pasión por crear.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section-bottom-pad" id="salida">
-      <div class="container">
-        <div class="careers-card reveal">
-          <div class="card-pad" style="padding:24px 24px 28px">
-            <div class="two-col" style="align-items:center">
-              <div>
-                <span class="btn btn-dark" style="min-height:32px;padding:0 14px;border-radius:999px;cursor:default;transform:none">Salida profesional</span>
-                <h2 style="margin:18px 0 12px;font-size:38px;line-height:1.08;letter-spacing:-.03em;max-width:720px">Diseña para marcas, productos, estudios creativos, tecnología y nuevas industrias digitales.</h2>
-                <p class="muted" style="max-width:620px">El cierre del prototipo resume una idea central: esta carrera no limita. Expande posibilidades. La interfaz termina con un llamado directo para convertir interés en acción.</p>
-              </div>
-
-              <div class="careers-grid">
-                <div class="career-tag"><span>UX/UI Designer</span><svg class="icon sm stroke" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg></div>
-                <div class="career-tag"><span>Game Designer</span><svg class="icon sm stroke" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg></div>
-                <div class="career-tag"><span>Creative Developer</span><svg class="icon sm stroke" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg></div>
-                <div class="career-tag"><span>Product Designer</span><svg class="icon sm stroke" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg></div>
-                <div class="career-tag"><span>Interactive Artist</span><svg class="icon sm stroke" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg></div>
-                <div class="career-tag"><span>Digital Experience Designer</span><svg class="icon sm stroke" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg></div>
-              </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Cuál es la salida laboral real de esta carrera?
+              <svg class="icon stroke faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Extremadamente alta. Nuestros graduados salen con un portafolio listo y trabajan como Game Designers, Desarrolladores Front-End, Diseñadores UX/UI para apps, Artistas Técnicos y Directores de Arte Interactivo para agencias o estudios internacionales.</p>
             </div>
           </div>
         </div>
@@ -1224,12 +558,12 @@
 
   <div class="bottom-bar">
     <div class="bottom-actions">
-      <a class="btn btn-primary" href="https://admision.usfq.edu.ec" target="_blank" rel="noreferrer">Postula ahora</a>
-      <a class="btn btn-secondary" href="https://www.usfq.edu.ec/es/carreras-de-pregrado/diseno-de-medios-interactivos" target="_blank" rel="noreferrer">Ver carrera</a>
+      <a class="btn btn-primary" href="https://admision.usfq.edu.ec" target="_blank" rel="noreferrer" style="width: 100%;">Postula o Solicita Cambio</a>
     </div>
   </div>
 
   <script>
+    // Menú móvil
     const menuBtn = document.getElementById('menuBtn');
     const mobilePanel = document.getElementById('mobilePanel');
     if (menuBtn && mobilePanel) {
@@ -1245,30 +579,31 @@
       });
     }
 
+    // Datos de las áreas
     const areaData = {
-      ux: {
-        icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"></rect><path d="M9 7h6"></path><path d="M8 12h8"></path></svg>',
-        title: 'Diseña experiencias claras, humanas y memorables',
-        text: 'Aprende a investigar, prototipar y construir interfaces que realmente respondan a las personas. La propuesta visual combina usabilidad, dirección de arte y pensamiento estratégico.',
-        bullets: ['Arquitectura de información', 'Prototipado interactivo', 'Diseño visual y sistemas']
-      },
       games: {
         icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"></rect><path d="M7 17l-1 4"></path><path d="M17 17l1 4"></path></svg>',
-        title: 'Convierte ideas en mundos interactivos',
-        text: 'Explora narrativa, mecánicas, dirección visual y desarrollo técnico para crear videojuegos con identidad propia. El enfoque mezcla creatividad, lógica y experiencia de usuario.',
-        bullets: ['Diseño de juego', 'Narrativa interactiva', 'Producción y testing']
+        title: 'Desarrolla en Unity y Unreal',
+        text: 'Construye mundos multijugador, diseña mecánicas, aplica modelado 3D y rigging. Prepárate para la industria del gaming.',
+        bullets: ['Lógica multijugador (Photon)', 'Modelado y Animación 3D', 'Mecánicas y Game Design']
+      },
+      ux: {
+        icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"></rect><path d="M9 7h6"></path><path d="M8 12h8"></path></svg>',
+        title: 'Diseña interfaces centradas en el usuario',
+        text: 'Aprende a investigar, prototipar y construir interfaces que realmente respondan a las personas. Domina Figma y sistemas de diseño.',
+        bullets: ['Arquitectura de información', 'Prototipado interactivo', 'Research & Testing']
       },
       webapps: {
         icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.3 3 14.7 0 18"></path><path d="M12 3c-3 3.3-3 14.7 0 18"></path></svg>',
-        title: 'Crea productos digitales listos para el mundo real',
-        text: 'Desarrolla plataformas, sitios y aplicaciones con una visión contemporánea del diseño digital. El prototipo prioriza claridad, jerarquía visual y navegación intuitiva.',
-        bullets: ['Front-end creativo', 'Productos digitales', 'Flujos y experiencias']
+        title: 'Programa productos digitales reales',
+        text: 'Desarrolla plataformas, sitios web y web apps. Conecta el diseño de interfaces con el código robusto para lanzar al mercado.',
+        bullets: ['Front-end creativo', 'E-commerce y Apps', 'Lógica de interacción']
       },
       physical: {
         icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M4 10h3"></path><path d="M17 10h3"></path><path d="M4 14h3"></path><path d="M17 14h3"></path><path d="M10 4v3"></path><path d="M14 4v3"></path><path d="M10 17v3"></path><path d="M14 17v3"></path></svg>',
-        title: 'Lleva la interactividad más allá de la pantalla',
-        text: 'Experimenta con instalaciones, interfaces físicas y tecnología emergente para crear experiencias inmersivas con un componente visual y sensorial fuerte.',
-        bullets: ['Interfaces tangibles', 'Instalaciones interactivas', 'Tecnología emergente']
+        title: 'Instalaciones y computación física',
+        text: 'Experimenta con sensores, Arduino y tecnología emergente para crear experiencias inmersivas que salen de la pantalla.',
+        bullets: ['Interfaces tangibles', 'Sensores y robótica', 'Experiencias inmersivas']
       }
     };
 
@@ -1287,19 +622,16 @@
       areaText.textContent = area.text;
       areaBullets.innerHTML = area.bullets.map(item => `
         <div class="bullet-chip">
-          <svg class="icon sm stroke" style="color:#f88388;flex:0 0 auto" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 13l4 4L19 7"></path>
-          </svg>
+          <svg class="icon sm stroke" style="color:#f88388;flex:0 0 auto" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
           <span>${item}</span>
         </div>
       `).join('');
     }
 
-    areaButtons.forEach(btn => {
-      btn.addEventListener('click', () => renderArea(btn.dataset.area));
-    });
-    renderArea('ux');
+    areaButtons.forEach(btn => btn.addEventListener('click', () => renderArea(btn.dataset.area)));
+    renderArea('games');
 
+    // Animaciones al hacer scroll
     const revealItems = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1309,8 +641,28 @@
         }
       });
     }, { threshold: 0.14 });
-
     revealItems.forEach(el => io.observe(el));
+
+    // Lógica para el FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-question');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        const isActive = parent.classList.contains('active');
+        
+        // Cierra todos
+        document.querySelectorAll('.faq-item').forEach(faq => {
+          faq.classList.remove('active');
+          faq.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Si no estaba activo, ábrelo
+        if (!isActive) {
+          parent.classList.add('active');
+          item.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
   </script>
 </body>
 </html>
