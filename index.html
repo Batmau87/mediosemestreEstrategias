@@ -4,7 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>USFQ · Medios Interactivos | La Carrera del Futuro</title>
+  
   <meta name="description" content="Diseño de Medios Interactivos en la USFQ. Crea videojuegos, VR/AR, desarrollo web y experiencias digitales. Conoce cómo cambiarte de carrera y validar tus materias." />
+  <meta property="og:title" content="Diseño de Medios Interactivos | USFQ" />
+  <meta property="og:description" content="¿Sientes que tu carrera no es para ti? Pásate a DMI y trabaja en proyectos prácticos hoy. Crea videojuegos, VR/AR y desarrollo web." />
+  <meta property="og:type" content="website" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-30D5ZYZD33"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-30D5ZYZD33');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Diseño de Medios Interactivos",
+    "description": "Carrera universitaria enfocada en videojuegos, realidad virtual, desarrollo web e interactividad física.",
+    "provider": {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad San Francisco de Quito - USFQ",
+      "sameAs": "https://www.usfq.edu.ec"
+    }
+  }
+  </script>
+
   <style>
     :root{
       --bg:#ffffff;
@@ -42,7 +69,6 @@
     button{font:inherit}
     img{max-width:100%;display:block; height:auto;}
 
-    /* Orbes y fondos generales (solo visibles en secciones blancas) */
     .bg-orb{
       position:fixed;
       inset:0;
@@ -78,7 +104,6 @@
     .container{width:min(calc(100% - 32px),var(--max));margin:0 auto}
     .section{padding:56px 0}
     .section-lg{padding:72px 0}
-    .section-bottom-pad{padding-bottom:112px}
 
     .reveal{
       opacity:0;
@@ -87,7 +112,6 @@
     }
     .reveal.in{opacity:1; transform:translateY(0);}
 
-    /* Header & Nav Blanca */
     .site-header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);}
     .header-row{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
     .brand{display:flex;align-items:center;gap:12px;transition:transform .28s ease;}
@@ -122,15 +146,10 @@
       transition:all .24s ease;white-space:nowrap;font-weight:600;
     }
     .btn:hover{transform:translateY(-2px) scale(1.02)}
-    .btn:active{transform:translateY(0) scale(.985)}
     .btn-primary{background:var(--red);color:#fff;box-shadow:0 16px 34px rgba(215,25,32,.18);}
-    .btn-primary:hover{background:#101012; color:#fff;}
     .btn-secondary{background:#fff;color:var(--text);border:1px solid rgba(0,0,0,.14);}
-    .btn-secondary:hover{background:var(--red-soft);color:var(--red);border-color:rgba(215,25,32,.22);}
     .btn-dark{background:#101012;color:#fff;}
-    .btn-dark:hover{background:var(--red)}
     .btn-icon{width:48px;padding:0;border:1px solid var(--line);background:#fff;color:var(--text);}
-    .btn-icon:hover{background:var(--red-soft);color:var(--red);border-color:rgba(215,25,32,.18)}
 
     .mobile-panel{display:none;border-top:1px solid var(--line-soft);padding:0 0 14px;}
     .mobile-panel.open{display:block}
@@ -139,12 +158,10 @@
       padding:14px 16px;border:1px solid var(--line);border-radius:20px;background:#fff;
       font-size:14px;transition:all .24s ease;color:#0e0e11;
     }
-    .mobile-link:hover{transform:translateY(-2px);background:var(--red-soft);color:var(--red);border-color:rgba(215,25,32,.18);}
 
-    /* Hero Negro */
     .hero{
-      background-color: #050505; /* Fondo negro */
-      color: #ffffff; /* Letras blancas */
+      background-color: #050505;
+      color: #ffffff;
       padding: 56px 0 72px;
       position: relative;
     }
@@ -156,37 +173,25 @@
       font-weight:700;font-size:12px;box-shadow:0 10px 30px rgba(215,25,32,.08);
       transition:all .24s ease;
     }
-    .eyebrow-pill:hover{transform:translateY(-2px) scale(1.03);background:#ffe9ea}
-    
-    /* Variante de Pill para fondos oscuros */
     .dark-pill {
       background: rgba(215,25,32,0.15);
       border-color: rgba(215,25,32,0.3);
       color: #ffb4b6;
       box-shadow: none;
     }
-    .dark-pill:hover { background: rgba(215,25,32,0.25); }
 
     .hero h1{margin:0;font-size:42px;line-height:1.02;letter-spacing:-.04em;max-width:760px; color: #ffffff;}
     .hero p.lead{margin:0;max-width:620px;color:rgba(255,255,255,0.7);font-size:17px;line-height:1.7;}
     .hero-actions{display:flex;flex-direction:column;gap:12px;margin-top:26px;}
-    .hero-actions .arrow{transition:transform .24s ease;}
     
-    /* Botón secundario modificado para el Hero negro */
     .hero .btn-secondary {
       background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.2);
     }
-    .hero .btn-secondary:hover {
-      background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4);
-    }
 
-    /* Logos (Ahora en fondo negro se verán perfectos) */
     .logos-wrapper { margin-top: 48px; text-align: center; }
     .logos-wrapper p { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 16px;}
-    .logos-wrapper img { width: 100%; max-width: 700px; margin: 0 auto; opacity: 0.7; transition: opacity 0.3s;}
-    .logos-wrapper img:hover { opacity: 1; }
+    .logos-wrapper img { width: 100%; max-width: 700px; margin: 0 auto; opacity: 0.7;}
 
-    /* Universal Cards & Layouts */
     .card{
       background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);
       border-radius:var(--radius-lg);transition:all .28s ease;
@@ -195,42 +200,39 @@
     .card-pad{padding:24px}
     
     .section-title{display:grid;gap:10px;margin-bottom:32px;}
+    .section-title.text-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
     
-    /* Arreglo del Pill gigante */
     .section-title .pill{
       display:inline-flex;
-      justify-self: start; /* Esto evita que se estire a lo ancho */
-      align-self: start;   /* Esto evita que se estire a lo alto */
+      justify-self: start; 
+      align-self: start;   
       width:max-content;padding:8px 14px;border-radius:999px;
       border:1px solid rgba(215,25,32,.18);background:var(--red-soft);color:#b1141a;
       font-size:11px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;
     }
+    .section-title.text-center .pill { align-self: center; }
     
     .section-title h2{margin:0;font-size:32px;line-height:1.1;max-width:760px;letter-spacing:-.03em;}
     .section-title p{margin:0;color:var(--muted);max-width:800px;font-size:15px;line-height:1.7;}
 
-    .three-col, .four-col, .two-col{display:grid;gap:16px;}
+    .three-col, .two-col{display:grid;gap:16px;}
     
-    /* Areas & Interactive Panel */
     .areas-layout{display:grid;gap:28px;}
     .areas-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
     .area-btn{
       border:1px solid var(--line);background:#fff;border-radius:22px;padding:16px;
       text-align:left;cursor:pointer;transition:all .24s ease;color:rgba(14,14,17,.78);
     }
-    .area-btn:hover{transform:translateY(-5px) scale(1.02);border-color:rgba(215,25,32,.18);background:rgba(255,240,241,.72);}
-    .area-btn.active{border-color:rgba(215,25,32,.28);background:var(--red-soft);box-shadow:0 18px 40px rgba(215,25,32,.12);color:#b1141a;}
+    .area-btn.active{border-color:rgba(215,25,32,.28);background:var(--red-soft);color:#b1141a;}
     .area-btn .mini-icon{
       width:44px;height:44px;border-radius:16px;display:grid;place-items:center;
-      margin-bottom:12px;background:rgba(0,0,0,.04);color:rgba(14,14,17,.75);transition:all .24s ease;
+      margin-bottom:12px;background:rgba(0,0,0,0.04);transition:all .24s ease;
     }
-    .area-btn.active .mini-icon{background:#ffe3e4;color:var(--red);}
 
     .area-panel{
       border:1px solid var(--line);background:#fff;border-radius:32px;padding:22px;
       box-shadow:0 18px 70px rgba(0,0,0,.08);transition:all .24s ease;
     }
-    .area-panel:hover{transform:translateY(-4px);box-shadow:0 26px 70px rgba(215,25,32,.12);}
     .area-panel-grid{display:grid;gap:24px;}
     .area-panel .big-icon{
       width:56px;height:56px;border-radius:20px;display:grid;place-items:center;
@@ -244,31 +246,23 @@
       border-radius:18px;padding:14px;display:flex;gap:12px;align-items:center;
     }
 
-    /* Galería & Hackathon */
     .project-card { display: flex; flex-direction: column; height: 100%; }
     .project-img-ph { height: 180px; background: linear-gradient(135deg, #fce4e4, #fff0f1); border-radius: 16px 16px 0 0; display: flex; align-items: center; justify-content: center; color: var(--red); font-weight: bold; font-size: 14px; border-bottom: 1px solid var(--line-soft);}
     .hackathon-banner {
       background: linear-gradient(135deg, #101012, #2a0809); color: white; border-radius: var(--radius-xl); padding: 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; position: relative; overflow: hidden;
     }
-    .hackathon-banner::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background: radial-gradient(circle, rgba(215,25,32,0.15) 0%, transparent 60%); z-index: 0; pointer-events: none;}
-    .hackathon-banner > * { z-index: 1; }
 
-    /* Testimonios */
     .testimonial-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow); position: relative; }
     .testimonial-quote { font-size: 16px; font-style: italic; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
     .testimonial-author { display: flex; align-items: center; gap: 12px; }
     .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--red-soft); display: grid; place-items: center; color: var(--red); font-weight: 700; }
     
-    /* FAQ */
     .faq-item { border: 1px solid var(--line); border-radius: 16px; background: #fff; margin-bottom: 12px; overflow: hidden; transition: all 0.3s ease; }
     .faq-question { width: 100%; text-align: left; padding: 18px 20px; font-size: 16px; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text); }
     .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; color: var(--muted); font-size: 15px; line-height: 1.6; }
     .faq-item.active .faq-answer { padding: 0 20px 20px; max-height: 200px; }
     .faq-item.active { border-color: rgba(215,25,32,.28); background: var(--red-soft); }
-    .faq-icon { transition: transform 0.3s ease; }
-    .faq-item.active .faq-icon { transform: rotate(180deg); color: var(--red); }
 
-    /* Responsive */
     @media (min-width: 640px){
       .hero{padding:72px 0 96px}
       h1{font-size:56px}
@@ -284,7 +278,6 @@
       .two-col{grid-template-columns:1fr 1fr}
       .areas-layout{grid-template-columns:.70fr 1.30fr}
       .area-panel-grid{grid-template-columns:1fr .8fr}
-      .bottom-bar{display:none}
     }
 
     .icon{width:20px;height:20px;display:inline-block;vertical-align:middle}
@@ -318,6 +311,7 @@
         <a class="nav-link" href="#areas">Áreas</a>
         <a class="nav-link" href="#proyectos">Proyectos y Eventos</a>
         <a class="nav-link" href="#testimonios">Testimonios</a>
+        <a class="nav-link" href="#registro">Contacto</a>
         <a class="nav-link" href="#faq">FAQ Transición</a>
       </nav>
 
@@ -336,6 +330,7 @@
         <a class="mobile-link" href="#areas">Áreas</a>
         <a class="mobile-link" href="#proyectos">Proyectos y Eventos</a>
         <a class="mobile-link" href="#testimonios">Testimonios</a>
+        <a class="mobile-link" href="#registro">Contacto</a>
         <a class="mobile-link" href="#faq">FAQ Transición</a>
       </div>
     </div>
@@ -358,8 +353,8 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://admision.usfq.edu.ec" target="_blank" rel="noreferrer">
-              Iniciar mi postulación / cambio
+            <a class="btn btn-primary" href="#registro">
+              Descargar Guía Gratuita
               <svg class="icon sm stroke arrow" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path>
               </svg>
@@ -369,7 +364,7 @@
 
           <div class="logos-wrapper">
             <p>Aprende a usar las herramientas de la industria</p>
-            <img src="https://framerusercontent.com/images/FVhPzqDNxTIuiAITOmXoVY0pw.png?width=1080&height=436" alt="Logos de tecnologías y herramientas de desarrollo" loading="lazy">
+            <img src="https://framerusercontent.com/images/FVhPzqDNxTIuiAITOmXoVY0pw.png?width=1080&height=436" alt="Herramientas DMI USFQ: Unity, Unreal Engine, Figma, Arduino" loading="lazy">
           </div>
         </div>
 
@@ -420,10 +415,10 @@
               <div>
                 <div class="big-icon" id="areaIcon"></div>
                 <h3 id="areaTitle">Desarrolla en Unity y Unreal</h3>
-                <p id="areaText">Construye mundos multijugador, diseña mecánicas, aplica modelado 3D y rigging. Prepárate para la industria del gaming internacional.</p>
+                <p id="areaText">Construye mundos multijugador, diseña mecánicas, aplica modelado 3D y rigging.</p>
               </div>
               <div class="dark-box">
-                <div class="label">Habilidades adquiridas</div>
+                <div class="label" style="font-size:12px; opacity:0.6; margin-bottom:12px;">Habilidades</div>
                 <div class="bullet-stack" id="areaBullets"></div>
               </div>
             </div>
@@ -434,10 +429,10 @@
 
     <section class="section" id="proyectos">
       <div class="container">
-        <div class="section-title reveal text-center" style="display:flex; flex-direction:column; align-items:center;">
-          <span class="pill" style="align-self:center;">Galería DMI</span>
-          <h2 style="text-align:center;">Proyectos reales de estudiantes reales</h2>
-          <p style="text-align:center;">Tu portafolio se construye mientras estudias. Estos son proyectos nacidos en nuestras aulas y eventos.</p>
+        <div class="section-title reveal text-center">
+          <span class="pill">Galería DMI</span>
+          <h2>Proyectos reales de estudiantes</h2>
+          <p>Tu portafolio se construye mientras estudias. Estos son proyectos nacidos en nuestras aulas.</p>
         </div>
 
         <div class="three-col reveal">
@@ -445,7 +440,7 @@
             <div class="project-img-ph">Proyecto en Unity 6</div>
             <div class="card-pad">
               <h3 style="margin: 0 0 8px; font-size: 18px; color:#0e0e11;">Partial Truth</h3>
-              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Juego cooperativo 3D multijugador desarrollado con Unity 6 y Photon Fusion 2. Un proyecto nacido directamente del esfuerzo de nuestros alumnos en hackathons.</p>
+              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Juego cooperativo 3D multijugador desarrollado con Unity 6 y Photon Fusion 2.</p>
               <span class="eyebrow-pill" style="font-size: 10px; padding: 4px 8px;">Game Dev</span>
             </div>
           </article>
@@ -453,8 +448,8 @@
           <article class="card project-card hover-rise">
             <div class="project-img-ph">Entorno Inmersivo</div>
             <div class="card-pad">
-              <h3 style="margin: 0 0 8px; font-size: 18px; color:#0e0e11;">Experiencia VR Cultural</h3>
-              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Aplicación de realidad virtual que explora mitologías indígenas mediante narrativa interactiva y diseño 3D avanzado.</p>
+              <h3 style="margin: 0 0 8px; font-size: 18px; color:#0e0e11;">Experiencia VR</h3>
+              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Aplicación de realidad virtual que explora mitologías mediante narrativa interactiva.</p>
               <span class="eyebrow-pill" style="font-size: 10px; padding: 4px 8px;">VR / AR</span>
             </div>
           </article>
@@ -463,19 +458,10 @@
             <div class="project-img-ph">Web & App</div>
             <div class="card-pad">
               <h3 style="margin: 0 0 8px; font-size: 18px; color:#0e0e11;">Rediseño E-commerce</h3>
-              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Optimización UX/UI y desarrollo front-end de un e-commerce real implementando mejores prácticas de conversión y usabilidad.</p>
+              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Optimización UX/UI y desarrollo front-end de un producto digital real.</p>
               <span class="eyebrow-pill" style="font-size: 10px; padding: 4px 8px;">UX / UI</span>
             </div>
           </article>
-        </div>
-
-        <div class="hackathon-banner reveal" style="margin-top: 48px;">
-          <h2 style="margin: 0; font-size: 32px;">Nacimos para hackear la realidad</h2>
-          <p style="margin: 0; font-size: 16px; max-width: 600px; color: rgba(255,255,255,0.8);">La DMI es la sede principal del <strong>interact2hack</strong>, la maratón de desarrollo donde creas juegos, apps y experiencias en tiempo récord. El lugar donde tu creatividad encuentra código.</p>
-          <a class="btn btn-primary" href="https://interact2hack.com/" target="_blank" rel="noreferrer" style="margin-top: 16px;">
-            Conoce el evento interact2hack
-            <svg class="icon sm stroke arrow" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
-          </a>
         </div>
       </div>
     </section>
@@ -483,87 +469,85 @@
     <section class="section" id="testimonios" style="background: var(--bg-soft);">
       <div class="container">
         <div class="section-title reveal">
-          <span class="pill">Nuestra Comunidad</span>
-          <h2>Lo que dicen los que ya dieron el salto</h2>
+          <span class="pill">Testimonios</span>
+          <h2>Historias de éxito</h2>
         </div>
-        
         <div class="two-col reveal">
           <div class="testimonial-card">
-            <p class="testimonial-quote">"Empecé en otra carrera porque no sabía que existía algo donde pudiera juntar mi amor por el arte 3D y la programación. Validaron mis materias de tronco común, me cambié, y ahora desarrollo juegos en Unity."</p>
+            <p class="testimonial-quote">"Empecé en otra carrera y me cambié a DMI para juntar el arte 3D y la programación. Validaron mis materias y ahora desarrollo juegos."</p>
             <div class="testimonial-author">
               <div class="author-avatar">S</div>
-              <div>
-                <strong style="display:block; font-size: 14px;">Sebastián P.</strong>
-                <span style="font-size: 12px; color: var(--muted);">Estudiante, Cambio de Carrera</span>
-              </div>
+              <div><strong>Sebastián P.</strong><span style="font-size: 12px; color: var(--muted); display:block;">Estudiante, Cambio de Carrera</span></div>
             </div>
           </div>
-          
           <div class="testimonial-card">
-            <p class="testimonial-quote">"La carrera te prepara para lo que la industria realmente pide. Entré queriendo hacer páginas web, terminé siendo un fanático de After Effects y el diseño de experiencias interactivas físicas."</p>
+            <p class="testimonial-quote">"La carrera te prepara para la industria real. Entré por la web y terminé fanático de After Effects y diseño de experiencias físicas."</p>
             <div class="testimonial-author">
               <div class="author-avatar">M</div>
-              <div>
-                <strong style="display:block; font-size: 14px;">Martina C.</strong>
-                <span style="font-size: 12px; color: var(--muted);">Alumna de 6to Semestre</span>
-              </div>
+              <div><strong>Martina C.</strong><span style="font-size: 12px; color: var(--muted); display:block;">Alumna de 6to Semestre</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="faq">
-      <div class="container" style="max-width: 800px;">
-        <div class="section-title reveal text-center" style="display:flex; flex-direction:column; align-items:center;">
-          <span class="pill" style="align-self:center;">Dudas Frecuentes</span>
-          <h2 style="text-align:center;">Todo listo para que des el paso</h2>
-          <p style="text-align:center;">Tanto si vienes del colegio como si quieres trasladarte desde otra carrera, aquí resolvemos tus dudas.</p>
-        </div>
-
-        <div class="reveal">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              ¿Me puedo cambiar a DMI desde otra carrera en la USFQ u otra U?
-              <svg class="icon stroke faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
-            </button>
-            <div class="faq-answer">
-              <p>¡Totalmente! Es un proceso súper común. Tus materias del Colegio General (Artes Liberales) y otras compatibles se validan directamente para que no pierdas el progreso que ya lograste. Nuestro equipo te guía paso a paso en el proceso de homologación.</p>
-            </div>
+    <section class="section" id="registro">
+      <div class="container" style="max-width: 700px;">
+        <div class="card card-pad hover-rise reveal" style="text-align: center; border-color: rgba(215,25,32,.28);">
+          <div class="section-title text-center">
+            <span class="pill">Empieza Hoy</span>
+            <h2 style="font-size: 28px;">Desbloquea tu potencial</h2>
+            <p>Recibe la <strong>Guía de Iniciación: 5 herramientas para crear tu primer videojuego</strong> y agendar tu visita.</p>
           </div>
           
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              ¿Necesito saber programar o diseñar en 3D antes de entrar?
-              <svg class="icon stroke faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
-            </button>
-            <div class="faq-answer">
-              <p>No. La carrera está diseñada para enseñarte desde los fundamentos lógicos y de diseño visual hasta programación avanzada (C#, web, etc.) y modelado complejo. Solo necesitas pasión por crear.</p>
-            </div>
-          </div>
+          <div class="engage-hub-form-embed" id="eh_form_5141456147447808" data-id="5141456147447808"></div>
+          
+          <script>
+            (window.EhDynamicRef ||= []).push(() => {
+                EhForms.create({
+                  "formId": "5141456147447808",
+                  "target": "#eh_form_5141456147447808", /* Fix: Target específico para que no se escape */
+                  "onFormReady": function(el, setValue) { 
+                  }
+               });
+            });
+          </script>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="faq" style="background: var(--bg-soft);">
+      <div class="container" style="max-width: 800px;">
+        <div class="section-title reveal text-center">
+          <span class="pill">FAQ</span>
+          <h2>Dudas Frecuentes</h2>
+        </div>
+        <div class="reveal">
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              ¿Cuál es la salida laboral real de esta carrera?
-              <svg class="icon stroke faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
-            </button>
-            <div class="faq-answer">
-              <p>Extremadamente alta. Nuestros graduados salen con un portafolio listo y trabajan como Game Designers, Desarrolladores Front-End, Diseñadores UX/UI para apps, Artistas Técnicos y Directores de Arte Interactivo para agencias o estudios internacionales.</p>
-            </div>
+            <button class="faq-question">¿Me puedo cambiar desde otra carrera? <svg class="icon stroke faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></button>
+            <div class="faq-answer"><p>¡Totalmente! Validamos tus materias de Colegio General y compatibles directamente.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">¿Necesito saber programar antes de entrar? <svg class="icon stroke faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></button>
+            <div class="faq-answer"><p>No. Te enseñamos desde los fundamentos hasta programación avanzada y modelado 3D complejo.</p></div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="bottom-bar">
-    <div class="bottom-actions">
-      <a class="btn btn-primary" href="https://admision.usfq.edu.ec" target="_blank" rel="noreferrer" style="width: 100%;">Postula o Solicita Cambio</a>
+  <footer style="background: #050505; color: #fff; padding: 48px 0; text-align: center; border-top: 1px solid #222;">
+    <div class="container">
+      <img src="https://framerusercontent.com/images/FVhPzqDNxTIuiAITOmXoVY0pw.png?width=1080&height=436" alt="Medios Interactivos USFQ" style="max-width: 320px; margin: 0 auto 24px; opacity: 0.6; filter: grayscale(100%); transition: all 0.3s ease;">
+      <p style="margin: 0; color: rgba(255,255,255,0.4); font-size: 13px; line-height: 1.6;">
+        © 2026 Universidad San Francisco de Quito (USFQ)<br>
+        Diseño de Medios Interactivos. Todos los derechos reservados.
+      </p>
     </div>
-  </div>
+  </footer>
 
   <script>
-    // Menú móvil
+    // Navegación Móvil
     const menuBtn = document.getElementById('menuBtn');
     const mobilePanel = document.getElementById('mobilePanel');
     if (menuBtn && mobilePanel) {
@@ -571,67 +555,53 @@
         const open = mobilePanel.classList.toggle('open');
         menuBtn.setAttribute('aria-expanded', String(open));
       });
-      mobilePanel.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobilePanel.classList.remove('open');
-          menuBtn.setAttribute('aria-expanded', 'false');
-        });
-      });
     }
 
-    // Datos de las áreas
+    // Datos Áreas
     const areaData = {
       games: {
         icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"></rect><path d="M7 17l-1 4"></path><path d="M17 17l1 4"></path></svg>',
-        title: 'Desarrolla en Unity y Unreal',
-        text: 'Construye mundos multijugador, diseña mecánicas, aplica modelado 3D y rigging. Prepárate para la industria del gaming.',
-        bullets: ['Lógica multijugador (Photon)', 'Modelado y Animación 3D', 'Mecánicas y Game Design']
+        title: 'Videojuegos y VR',
+        bullets: ['Lógica multijugador', 'Modelado 3D', 'Game Design']
       },
       ux: {
         icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"></rect><path d="M9 7h6"></path><path d="M8 12h8"></path></svg>',
-        title: 'Diseña interfaces centradas en el usuario',
-        text: 'Aprende a investigar, prototipar y construir interfaces que realmente respondan a las personas. Domina Figma y sistemas de diseño.',
-        bullets: ['Arquitectura de información', 'Prototipado interactivo', 'Research & Testing']
+        title: 'UX/UI Design',
+        bullets: ['Arquitectura de información', 'Prototipado', 'User Research']
       },
       webapps: {
-        icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.3 3 14.7 0 18"></path><path d="M12 3c-3 3.3-3 14.7 0 18"></path></svg>',
-        title: 'Programa productos digitales reales',
-        text: 'Desarrolla plataformas, sitios web y web apps. Conecta el diseño de interfaces con el código robusto para lanzar al mercado.',
-        bullets: ['Front-end creativo', 'E-commerce y Apps', 'Lógica de interacción']
+        icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.3 3 14.7 0 18"></path></svg>',
+        title: 'Desarrollo Web',
+        bullets: ['Front-end creativo', 'E-commerce', 'Interacción avanzada']
       },
       physical: {
-        icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M4 10h3"></path><path d="M17 10h3"></path><path d="M4 14h3"></path><path d="M17 14h3"></path><path d="M10 4v3"></path><path d="M14 4v3"></path><path d="M10 17v3"></path><path d="M14 17v3"></path></svg>',
-        title: 'Instalaciones y computación física',
-        text: 'Experimenta con sensores, Arduino y tecnología emergente para crear experiencias inmersivas que salen de la pantalla.',
-        bullets: ['Interfaces tangibles', 'Sensores y robótica', 'Experiencias inmersivas']
+        icon: '<svg class="icon lg stroke" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M4 10h3"></path><path d="M17 10h3"></path></svg>',
+        title: 'Interactividad Física',
+        bullets: ['Arduino y sensores', 'Instalaciones', 'Tecnología emergente']
       }
     };
 
     const areaButtons = document.querySelectorAll('.area-btn');
     const areaIcon = document.getElementById('areaIcon');
     const areaTitle = document.getElementById('areaTitle');
-    const areaText = document.getElementById('areaText');
     const areaBullets = document.getElementById('areaBullets');
 
     function renderArea(key){
       const area = areaData[key];
-      if (!area) return;
       areaButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.area === key));
       areaIcon.innerHTML = area.icon;
       areaTitle.textContent = area.title;
-      areaText.textContent = area.text;
       areaBullets.innerHTML = area.bullets.map(item => `
         <div class="bullet-chip">
-          <svg class="icon sm stroke" style="color:#f88388;flex:0 0 auto" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+          <svg class="icon sm stroke" style="color:#f88388;" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
           <span>${item}</span>
         </div>
       `).join('');
     }
-
     areaButtons.forEach(btn => btn.addEventListener('click', () => renderArea(btn.dataset.area)));
     renderArea('games');
 
-    // Animaciones al hacer scroll
+    // Reveal on scroll
     const revealItems = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -640,29 +610,29 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14 });
+    }, { threshold: 0.1 });
     revealItems.forEach(el => io.observe(el));
 
-    // Lógica para el FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-question');
-    faqItems.forEach(item => {
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(item => {
       item.addEventListener('click', () => {
-        const parent = item.parentElement;
-        const isActive = parent.classList.contains('active');
-        
-        // Cierra todos
-        document.querySelectorAll('.faq-item').forEach(faq => {
-          faq.classList.remove('active');
-          faq.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        });
-
-        // Si no estaba activo, ábrelo
-        if (!isActive) {
-          parent.classList.add('active');
-          item.setAttribute('aria-expanded', 'true');
-        }
+        item.parentElement.classList.toggle('active');
       });
     });
+  </script>
+
+  <script type="text/javascript" >
+    var EhAPI = EhAPI || {}; 
+    EhAPI.after_load = function(){
+      EhAPI.set_account('8tpcqk6ke9gp5fbgamd9ej9rfs', 'batmau87');
+      EhAPI.execute('rules');
+    };
+    (function(d,s,f) {
+      var sc=document.createElement(s);
+      sc.type='text/javascript';sc.async=true;sc.src=f;
+      var m=document.getElementsByTagName(s)[0];
+      m.parentNode.insertBefore(sc,m);
+    })(document, 'script', '//d2p078bqz5urf7.cloudfront.net/jsapi/ehform.js?v' + new Date().getHours());
   </script>
 </body>
 </html>
