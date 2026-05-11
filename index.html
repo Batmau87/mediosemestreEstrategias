@@ -263,6 +263,27 @@
     .faq-item.active .faq-answer { padding: 0 20px 20px; max-height: 200px; }
     .faq-item.active { border-color: rgba(215,25,32,.28); background: var(--red-soft); }
 
+    /* --- Ajuste dinámico de altura para el contenedor de EngageBay --- */
+    .engage-hub-form-embed iframe {
+      width: 100% !important;
+      border: none !important;
+      min-height: 450px; /* Altura base para compu */
+    }
+
+    /* Cuando la pantalla es de celular normal */
+    @media (max-width: 640px) {
+      .engage-hub-form-embed iframe {
+        min-height: 650px !important;
+      }
+    }
+
+    /* Cuando la pantalla es MÁS pequeña (menos de 524px) y el form se estira más */
+    @media (max-width: 524px) {
+      .engage-hub-form-embed iframe {
+        min-height: 850px !important; /* Le damos mucho más espacio hacia abajo para el botón */
+      }
+    }
+
     @media (min-width: 640px){
       .hero{padding:72px 0 96px}
       h1{font-size:56px}
@@ -401,12 +422,12 @@
               <div style="font-size:14px;font-weight:700">UX/UI Design</div>
             </button>
             <button class="area-btn" data-area="webapps">
-              <div class="mini-icon"><svg class="icon stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.3 3 14.7 0 18"></path><path d="M12 3c-3 3.3-3 14.7 0 18"></path></svg></div>
+              <div class="mini-icon"><svg class="icon stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.3 3 14.7 0 18"></path></svg></div>
               <div style="font-size:14px;font-weight:700">Desarrollo Web</div>
             </button>
             <button class="area-btn" data-area="physical">
-              <div class="mini-icon"><svg class="icon stroke" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M4 10h3"></path><path d="M17 10h3"></path><path d="M4 14h3"></path><path d="M17 14h3"></path><path d="M10 4v3"></path><path d="M14 4v3"></path><path d="M10 17v3"></path><path d="M14 17v3"></path></svg></div>
-              <div style="font-size:14px;font-weight:700">Interactividad</div>
+              <div class="mini-icon"><svg class="icon stroke" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M4 10h3"></path><path d="M17 10h3"></path></svg></div>
+              <div style="font-size:14px;font-weight:700">Interactividad Física</div>
             </button>
           </div>
 
@@ -502,16 +523,6 @@
           
           <div class="engage-hub-form-embed" id="eh_form_5141456147447808" data-id="5141456147447808"></div>
           
-          <script>
-            (window.EhDynamicRef ||= []).push(() => {
-                EhForms.create({
-                  "formId": "5141456147447808",
-                  "target": "#eh_form_5141456147447808", /* Fix: Target específico para que no se escape */
-                  "onFormReady": function(el, setValue) { 
-                  }
-               });
-            });
-          </script>
         </div>
       </div>
     </section>
